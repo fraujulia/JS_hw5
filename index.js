@@ -1,39 +1,24 @@
-/*function askOperation() {
-    let newWord;
-    let words = '';
-
-    while (true) {
-      newWord = prompt("Enter word");
-      words = words + newWord;
-      console.log(words);
-      if (newWord === "break") {
-        break;
-      }
-    }
-  }
-  askOperation()
-*/
-
 function enterWord() {
-  let newWord;
+  let answer = true;
   let words = "";
-  let result;
+  let currentWord;
 
-  while (true) {
-    newWord = prompt("Enter word");
-    words = words + newWord;
+  for (let i = 0; true; i++) {
+    if (i !==0 && i % 3 === 0) {
+      answer = confirm("Do you want to continue?");
+    }
+    if (!answer) {
+      break;
+    }
+    currentWord = prompt("Enter word");
+    words = words + currentWord;
+    if (currentWord === "break") break;
+    if (answer === false) break;
+    else;
     console.log(words);
-    newWord = prompt("Enter word");
-    words = words + newWord;
-    console.log(words);
-    newWord = prompt("Enter word");
-    words = words + newWord;
-    console.log(words);
-    if (newWord === "break") break;
-    result = confirm("Do you want to continue?");
-    if (result === false) break;
-    else continue;
   }
 }
 
 enterWord();
+
+
